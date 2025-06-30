@@ -1,24 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Tabs } from 'expo-router';
 
-export default function HomeScreen() {
+export default function TabsLayout() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Welcome to Instant Haul 🚚</Text>
-      <Text>Your hauling solution, fast and reliable!</Text>
-    </View>
+    <Tabs>
+      <Tabs.Screen
+        name="HomeScreen"
+        options={{ title: 'Home' }}
+      />
+      <Tabs.Screen
+        name="explore"
+        options={{ title: 'Explore' }}
+      />
+    </Tabs>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 20,
-  },
-  title: {
-    fontSize: 22,
-    fontWeight: 'bold',
-    marginBottom: 10,
-  },
-});
